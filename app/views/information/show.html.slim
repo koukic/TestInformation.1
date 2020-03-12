@@ -38,5 +38,3 @@ section.section.instrument-show
         = render @information.reviews
         div
           = link_to "Say thank you", new_information_review_path(@information), class: "btn-custom"
-  - if information_author(@information)
-    = link_to 'Edit', edit_information_path(@information), class: 'button'
