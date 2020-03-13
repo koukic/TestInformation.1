@@ -81,7 +81,7 @@ end
 
 gem 'pry-byebug', group: :development
 #gem 'jquery-rails'
-gem 'bootstrap', '~> 4.3', '>= 4.3.1'
+gem 'bootstrap', '~> 4.4', '>= 4.4.1'
 gem 'jbuilder', '~> 2.9'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'

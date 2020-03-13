@@ -5,8 +5,12 @@
         h1.title
           |  Browse the latest test information
         = form_tag :search_information_index, method: :get, class: "search" do
-          = text_field_tag "q", params[:q]
-          = submit_tag "検索"
+          .input-group
+            = text_field_tag "q",params[:q], placeholder:"キーワード検索"
+            = submit_tag "検索", class: 'button is-small ml-5'
+
+button.btn.btn-default[type="button"]
+  | Default
 
 .instrument-index-grid.pt4
   - if @informations.present?
