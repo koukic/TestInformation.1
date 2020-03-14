@@ -4,9 +4,9 @@ class InformationController < ApplicationController
   # GET /information
   # GET /information.json
   def index
-     @informations = Information.order("id")
-     @cart = (session[:cart_id] ? Cart.find_by(id: session[:cart_id]) : nil)
-     # @user = User.find(1)
+    @informations = Information.order(:id).page params[:page]
+    @cart = (session[:cart_id] ? Cart.find_by(id: session[:cart_id]) : nil)
+    # @user = User.find(1)
   end
   # GET /information/1
   # GET /information/1.json
@@ -65,6 +65,7 @@ class InformationController < ApplicationController
   end
   def search
     @informations = Information.search(params[:q])
+    @informations = Information.page(params[:page])
     render "index"
   end
   private

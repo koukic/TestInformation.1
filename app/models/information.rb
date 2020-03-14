@@ -1,10 +1,11 @@
 class Information < ApplicationRecord
+  paginates_per 10
   before_destroy :not_referenced_by_any_line_item
   has_many :information_images, dependent: :destroy
   accepts_nested_attributes_for :information_images
   # mount_uploaders :image, ImageUploader
   # serialize :image, JSON
-  has_many :line_items
+  has_many :line_items, dependent: :destroy
   belongs_to :user, optional: true
   has_many :reviews,dependent: :destroy
   validates :title, presence: true
@@ -33,7 +34,7 @@ class Information < ApplicationRecord
   def not_referenced_by_any_line_item
     unless line_items.empty?
       errors.add(:base, "Line items present")
-      throw :abort
+      # throw :abort
     end
   end
 end

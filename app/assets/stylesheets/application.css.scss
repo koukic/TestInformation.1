@@ -16,6 +16,7 @@
 $link: #444;
 $link-hover: #222;
 
+// @import "bootstrap";
 @import "bulma";
 @import "functions";
 
@@ -196,7 +197,6 @@ a {
   padding: 0 14px;
 }
 .global-nav__item a {
-  display: block;
   padding: 8px 0;
   border-bottom: 1px solid #eee;
   text-decoration: none;

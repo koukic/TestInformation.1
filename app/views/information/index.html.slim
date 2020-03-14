@@ -5,12 +5,12 @@
         h1.title
           |  Browse the latest test information
         = form_tag :search_information_index, method: :get, class: "search" do
-          .input-group
-            = text_field_tag "q",params[:q], placeholder:"キーワード検索"
-            = submit_tag "検索", class: 'button is-small ml-5'
+          .field.is-grouped
+            p.control.is-expanded
+              = text_field_tag "q",params[:q], placeholder:"キーワード検索",class: 'input'
 
-button.btn.btn-default[type="button"]
-  | Default
+            p.control
+              = submit_tag "検索", class: 'button is-default'
 
 .instrument-index-grid.pt4
   - if @informations.present?
@@ -34,3 +34,6 @@ button.btn.btn-default[type="button"]
           - if user_signed_in? && current_user == @user || information_author(information)
             / = link_to 'Edit', edit_information_path(information), class: "button is-small"
             = link_to 'Delete', information, method: :delete, data: { confirm: "Are you sure ?" }, class: "button is-small"
+
+
+= paginate @informations
