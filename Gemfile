@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.5.5'
+ruby '2.6.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
@@ -61,7 +61,7 @@ group :test do
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
-  gem 'chromedriver-helper'
+  gem 'webdrivers'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -81,7 +81,7 @@ end
 
 gem 'pry-byebug', group: :development
 #gem 'jquery-rails'
-gem 'bootstrap', '~> 4.4', '>= 4.4.1'
+gem 'bootstrap', '~> 4.3', '>= 4.3.1'
 gem 'jbuilder', '~> 2.9'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
@@ -89,4 +89,3 @@ gem 'slim'
 gem 'slim-rails'
 gem 'html2slim'
 gem 'kaminari', '~> 0.17.0'
-gem 'kaminari-bootstrap', '~> 3.0.1'
